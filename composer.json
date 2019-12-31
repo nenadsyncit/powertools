@@ -1,0 +1,21 @@
+{
+    "name": "syncit/powertools",
+    "description": "Module for testing purpose",
+     "version":"1.0.0",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "nenad",
+            "email": "zmajnex@gmail.com"
+        }
+    ], "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+          "Syncit\\PowerTools\\": ""
+        }
+      },
+    "minimum-stability": "alpha",
+    "require": {}
+
+}
