@@ -7,6 +7,7 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $cms = $objectManager->create(Syncit\PowerTools\Block\Categories::class);
 $page = $objectManager->create(Syncit\PowerTools\Block\CurrentPage::class);
 $browser = $objectManager->create(Syncit\PowerTools\Block\Browser::class);
+$attr = $objectManager->create(Syncit\PowerTools\Block\Attributes::class);
 //$page->dumpCurrentPage();
 //echo $page->getCurrentPageId();
 //$cms->dumpAllCategories();
@@ -16,4 +17,5 @@ $browser = $objectManager->create(Syncit\PowerTools\Block\Browser::class);
 ?>
 <?php // Get all products using coollection or repository ?>
 <?php  //$productsRepository = $this->getProductData();?> 
-<?php  $productsCollection = $this->getProducts();?>
+<?php  //$productsCollection = $this->getProducts();?>
+<?php  $attr->getAllAttributesNames()?>
