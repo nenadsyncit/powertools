@@ -45,7 +45,7 @@ class Attributes extends \Magento\Framework\View\Element\Template
       foreach($attributeInfo as $attributes)
       {
            $attributeId = $attributes->getAttributeId();
-           // You can get all fields of attribute here
+           
            var_dump($attributeId );
       }
    }
@@ -56,7 +56,7 @@ class Attributes extends \Magento\Framework\View\Element\Template
       foreach($attributeInfo as $attributes)
       {
            $attributeName = $attributes->getFrontendLabel();
-           // You can get all fields of attribute here
+           
            var_dump($attributeName );
       }
    }
