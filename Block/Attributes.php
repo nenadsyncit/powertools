@@ -33,7 +33,11 @@ class Attributes extends \Magento\Framework\View\Element\Template
        $this->_attributeFactory = $attributeFactory;
        
    }
-   
+   /**
+    * Get all attributes ids
+    *
+    * @return void
+    */
    public function getAllAttributesIds()
    {
        $attributeInfo = $this->_attributeFactory->getCollection();
