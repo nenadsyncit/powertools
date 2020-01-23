@@ -5,5 +5,8 @@
         <route id="powertools" frontName="powertools">
             <module name="Syncit_PowerTools" />
        </route>
+            <route id="api" frontName="api">
+            <module name="Syncit_PowerTools" />
+       </route>
     </router>
 </config>

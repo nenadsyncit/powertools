@@ -93,6 +93,7 @@ class Products extends \Magento\Framework\View\Element\Template
         $collection->joinAttribute('visibility', 'catalog_product/visibility', 'entity_id', null, 'inner');
         $collection->addAttributeToFilter('status', ['in' => $this->productStatus->getVisibleStatusIds()])
             ->addAttributeToFilter('visibility', ['in' => $this->productVisibility->getVisibleInSiteIds()]);
+        
         $productItems = $collection->getItems();
 
         return $productItems;

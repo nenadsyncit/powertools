@@ -26,17 +26,20 @@ class Categories extends \Magento\Framework\View\Element\Template
     protected $_categoryHelper;
     public $allCategories;
     public $registry;
+    private $serializer;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
         \Magento\Catalog\Helper\Category $categoryHelper,
         \Magento\Framework\Registry $registry,
+        \Magento\Framework\Serialize\SerializerInterface $serializer,
         array $data = []
     ) {
         $this->_categoryCollectionFactory = $categoryCollectionFactory;
         $this->_categoryHelper = $categoryHelper;
         $this->registry = $registry;
+        $this->serializer = $serializer;
         parent::__construct($context, $data);
     }
 
@@ -142,6 +145,18 @@ class Categories extends \Magento\Framework\View\Element\Template
             'url'=>$this->getCurrentCategoryUrl()   
         );
         return $data;
+    }
+    public function getAllCategoriesUrl()
+    {
+        $this->getAllCategories();
+        $data = $this->allCategories;
+        $url=[];       
+        foreach ($data as $item){
+            $url[] = $item['url'];
+        }
+        
+        return $url; 
+       
     }
 
 }

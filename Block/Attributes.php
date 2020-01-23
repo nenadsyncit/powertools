@@ -22,7 +22,7 @@ namespace Syncit\PowerTools\Block;
 class Attributes extends \Magento\Framework\View\Element\Template
 {
 
-    protected $_attributeFactory;
+    protected $attributeFactory;
 
     public function __construct(
       
@@ -30,7 +30,7 @@ class Attributes extends \Magento\Framework\View\Element\Template
       
    ) {
        
-       $this->_attributeFactory = $attributeFactory;
+       $this->attributeFactory = $attributeFactory;
        
    }
    /**
@@ -40,7 +40,7 @@ class Attributes extends \Magento\Framework\View\Element\Template
     */
    public function getAllAttributesIds()
    {
-       $attributeInfo = $this->_attributeFactory->getCollection();
+       $attributeInfo = $this->attributeFactory->getCollection();
    
       foreach($attributeInfo as $attributes)
       {
@@ -51,7 +51,7 @@ class Attributes extends \Magento\Framework\View\Element\Template
    }
    public function getAllAttributesNames()
    {
-       $attributeInfo = $this->_attributeFactory->getCollection();
+       $attributeInfo = $this->attributeFactory->getCollection();
    
       foreach($attributeInfo as $attributes)
       {
