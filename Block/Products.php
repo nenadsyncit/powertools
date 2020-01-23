@@ -25,6 +25,7 @@ class Products extends \Magento\Framework\View\Element\Template
     public $filterBuilder;
     public $productStatus;
     public $productVisibility;
+    public $productItems;
     // collection
     public $productCollectionFactory;
 
@@ -95,8 +96,22 @@ class Products extends \Magento\Framework\View\Element\Template
             ->addAttributeToFilter('visibility', ['in' => $this->productVisibility->getVisibleInSiteIds()]);
         
         $productItems = $collection->getItems();
-
+        $this->productItems = $productItems;
         return $productItems;
+    }
+    /**
+     * Get all products URL
+     *
+     * @return array $url
+     */
+    public function getProductsUrl(){
+        $this->getProducts();
+        $data = $this->productItems;
+        $url = [];
+        foreach($data as $item){
+           $url[] = $item->getProductUrl();
+        }
+        return $url;
     }
 
 }

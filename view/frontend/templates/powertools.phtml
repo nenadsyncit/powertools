@@ -9,19 +9,19 @@ $categories = $objectManager->create(Syncit\PowerTools\Block\Categories::class);
 // $browser = $objectManager->create(Syncit\PowerTools\Block\Browser::class);
 // $attr = $objectManager->create(Syncit\PowerTools\Block\Attributes::class);
 // $img = $objectManager->create(Syncit\PowerTools\Block\Images::class);
-// $product = $objectManager->create(Syncit\PowerTools\Block\Products::class);
+ $product = $objectManager->create(Syncit\PowerTools\Block\Products::class);
 //$page->dumpCurrentPage();
 //echo $page->getCurrentPageId();
 //$cms->dumpAllCategories();
 // Example get browser, version, and platform
 // echo $browser->getBrowser()." ". $browser->getVersion() ."<br/>";
 // echo $browser->getPlatform();
-var_dump($categories->getAllCategoriesUrl());
+//var_dump($categories->getAllCategoriesUrl());
 
 ?>
 <?php // Get all products using coollection or repository ?>
 <?php  //$productsRepository = $this->getProductData();?> 
 <?php  //$productsCollection = $this->getProducts();?>
 <?php  //$img->getAllImagesUrls()?>
-<?php  // var_dump( $product->getProducts());?>
+<?php   var_dump( $product->getProductsUrl());?>
 
