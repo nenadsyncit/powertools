@@ -138,25 +138,31 @@ class Categories extends \Magento\Framework\View\Element\Template
         $categoryUrl = $category->getUrl();
         return $categoryUrl;
     }
-    public function getCurrentCategoryInfo(){
+    public function getCurrentCategoryInfo()
+    {
         $data = array(
-            'id'=>$this->getCurrentCategoryId(),
-            'name'=>$this->getCurrentCategoryName(),
-            'url'=>$this->getCurrentCategoryUrl()   
+            'id' => $this->getCurrentCategoryId(),
+            'name' => $this->getCurrentCategoryName(),
+            'url' => $this->getCurrentCategoryUrl(),
         );
         return $data;
     }
+    /**
+     * Get all Categories URLs
+     *
+     * @return void
+     */
     public function getAllCategoriesUrl()
     {
         $this->getAllCategories();
         $data = $this->allCategories;
-        $url=[];       
-        foreach ($data as $item){
+        $url = [];
+        foreach ($data as $item) {
             $url[] = $item['url'];
         }
-        
-        return $url; 
-       
+
+        return $url;
+
     }
 
 }
