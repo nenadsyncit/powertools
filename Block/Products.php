@@ -94,7 +94,7 @@ class Products extends \Magento\Framework\View\Element\Template
         $collection->joinAttribute('visibility', 'catalog_product/visibility', 'entity_id', null, 'inner');
         $collection->addAttributeToFilter('status', ['in' => $this->productStatus->getVisibleStatusIds()])
             ->addAttributeToFilter('visibility', ['in' => $this->productVisibility->getVisibleInSiteIds()]);
-        
+
         $productItems = $collection->getItems();
         $this->productItems = $productItems;
         return $productItems;
@@ -104,12 +104,13 @@ class Products extends \Magento\Framework\View\Element\Template
      *
      * @return array $url
      */
-    public function getAllProductsUrl(){
+    public function getAllProductsUrl()
+    {
         $this->getProducts();
         $data = $this->productItems;
         $url = [];
-        foreach($data as $item){
-           $url[] = $item->getProductUrl();
+        foreach ($data as $item) {
+            $url[] = $item->getProductUrl();
         }
         return $url;
     }
