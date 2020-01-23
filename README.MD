@@ -11,7 +11,7 @@ Go to :
 http://{your_base_url}/powertools 
 Enjoy playing!
 
-## Products
+## Products 
 
 ## Categories
 
