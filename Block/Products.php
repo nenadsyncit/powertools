@@ -104,7 +104,7 @@ class Products extends \Magento\Framework\View\Element\Template
      *
      * @return array $url
      */
-    public function getProductsUrl(){
+    public function getAllProductsUrl(){
         $this->getProducts();
         $data = $this->productItems;
         $url = [];
