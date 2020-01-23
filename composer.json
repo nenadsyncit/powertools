@@ -1,5 +1,5 @@
 {
-    "name": "syncit/module-powertools",
+    "name": "syncit/powertools",
     "description": "Module for testing purpose",
      "version":"1.0.0",
     "type": "magento2-module",
