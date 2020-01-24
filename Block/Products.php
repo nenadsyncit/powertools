@@ -26,6 +26,7 @@ class Products extends \Magento\Framework\View\Element\Template
     public $productStatus;
     public $productVisibility;
     public $productItems;
+    public $model;
     // collection
     public $productCollectionFactory;
 
@@ -40,7 +41,8 @@ class Products extends \Magento\Framework\View\Element\Template
         \Magento\Catalog\Model\Product\Attribute\Source\Status $productStatus,
         \Magento\Catalog\Model\Product\Visibility $productVisibility,
         // Collection
-        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory
+        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
+        \Syncit\PowerTools\Model\Data $model
     ) {
         parent::__construct($context, $data);
         // Repository
@@ -50,6 +52,7 @@ class Products extends \Magento\Framework\View\Element\Template
         $this->filterBuilder = $filterBuilder;
         $this->productStatus = $productStatus;
         $this->productVisibility = $productVisibility;
+        $this->model = $model;
         // Collection
         $this->productCollectionFactory = $productCollectionFactory;
 
@@ -78,7 +81,7 @@ class Products extends \Magento\Framework\View\Element\Template
         $this->searchCriteria->setFilterGroups([$this->filterGroup]);
         $products = $this->productRepository->getList($this->searchCriteria);
         $productItems = $products->getItems();
-
+        $this->productItems = $productItems;
         return $productItems;
     }
     /**
@@ -97,10 +100,11 @@ class Products extends \Magento\Framework\View\Element\Template
 
         $productItems = $collection->getItems();
         $this->productItems = $productItems;
-        return $productItems;
+        //return $productItems;
+        return;
     }
     /**
-     * Get all products URL
+     * Get all products URL using collection
      *
      * @return array $url
      */
@@ -112,7 +116,39 @@ class Products extends \Magento\Framework\View\Element\Template
         foreach ($data as $item) {
             $url[] = $item->getProductUrl();
         }
+        return count($url);
+    }
+    /**
+     * Get all products URL using Repository
+     *
+     * @return array $url
+     */
+    public function getAllProductsUrlRepo()
+    {
+        $this->getProductData();
+
+        $data = $this->productItems;
+        $url = [];
+        foreach ($data as $item) {
+            $url[] = $item->getProductUrl();
+        }
+        return count($url);
+    }
+    /**
+     * Get all products urls from table using Model
+     *
+     * @return array $url
+     */
+    public function getDatas()
+    {
+        $Datas = $this->model->getCollection();
+        $allUrl= $Datas->getData();
+        $url=[];
+        foreach($allUrl as $item){
+            $url [] = 
+                $item['request_path'];
+            
+        }
         return $url;
     }
-
 }

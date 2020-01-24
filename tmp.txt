@@ -1,0 +1,1 @@
+SELECT DISTINCT `request_path` FROM `url_rewrite` WHERE `entity_type`="product" // 0.0006 sec

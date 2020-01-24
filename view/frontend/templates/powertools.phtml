@@ -3,13 +3,13 @@
 <p>Magento2 playground</p>
 <?php
 // Test your classes and methods
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$categories = $objectManager->create(Syncit\PowerTools\Block\Categories::class);
+//$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+//$categories = $objectManager->create(Syncit\PowerTools\Block\Categories::class);
 // $page = $objectManager->create(Syncit\PowerTools\Block\CurrentPage::class);
 // $browser = $objectManager->create(Syncit\PowerTools\Block\Browser::class);
 // $attr = $objectManager->create(Syncit\PowerTools\Block\Attributes::class);
 // $img = $objectManager->create(Syncit\PowerTools\Block\Images::class);
- $product = $objectManager->create(Syncit\PowerTools\Block\Products::class);
+ //$product = $objectManager->create(Syncit\PowerTools\Block\Products::class);
 //$page->dumpCurrentPage();
 //echo $page->getCurrentPageId();
 //$cms->dumpAllCategories();
@@ -23,5 +23,6 @@ $categories = $objectManager->create(Syncit\PowerTools\Block\Categories::class);
 <?php  //$productsRepository = $this->getProductData();?> 
 <?php  //$productsCollection = $this->getProducts();?>
 <?php  //$img->getAllImagesUrls()?>
-<?php   var_dump( $product->getAllProductsUrl());?>
-
+<?php  // var_dump( count($this->getAllProductsUrl()));die();?>
+<?php   //echo $this->getAllProductsUrl();die;?>
+<?php var_dump($this->getDatas());
