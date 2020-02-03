@@ -6,7 +6,9 @@
 ## Usage
 
 Install module in vendor folder using composer or in app/code/Syncit/PowerTools  
+```
 composer require syncit/module-powertools dev-master  
+```  
 Edit powertools.phtml and call methods from desired block  
 Go to :  
 http://{your_base_url}/powertools   
