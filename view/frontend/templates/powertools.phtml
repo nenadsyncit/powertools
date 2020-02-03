@@ -2,27 +2,11 @@
 <h1>PowerTools</h1>
 <p>Magento2 playground</p>
 <?php
-// Test your classes and methods
-//$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-//$categories = $objectManager->create(Syncit\PowerTools\Block\Categories::class);
-// $page = $objectManager->create(Syncit\PowerTools\Block\CurrentPage::class);
-// $browser = $objectManager->create(Syncit\PowerTools\Block\Browser::class);
-// $attr = $objectManager->create(Syncit\PowerTools\Block\Attributes::class);
-// $img = $objectManager->create(Syncit\PowerTools\Block\Images::class);
- //$product = $objectManager->create(Syncit\PowerTools\Block\Products::class);
-//$page->dumpCurrentPage();
-//echo $page->getCurrentPageId();
-//$cms->dumpAllCategories();
-// Example get browser, version, and platform
-// echo $browser->getBrowser()." ". $browser->getVersion() ."<br/>";
-// echo $browser->getPlatform();
-//var_dump($categories->getAllCategoriesUrl());
+/**
+ *  Test your classes and methods from Power.php controller
+ */
+// Example 1 Get all urls
+// var_dump($this->products->getDatas());
 
-?>
-<?php // Get all products using coollection or repository ?>
-<?php  //$productsRepository = $this->getProductData();?> 
-<?php  //$productsCollection = $this->getProducts();?>
-<?php  //$img->getAllImagesUrls()?>
-<?php  // var_dump( count($this->getAllProductsUrl()));die();?>
-<?php   //echo $this->getAllProductsUrl();die;?>
-<?php var_dump($this->getDatas());
+// Example 2 dump all cms pages
+$this->cms->dumpAllPages();

@@ -17,7 +17,8 @@
 namespace Syncit\PowerTools\Block;
 
 /**
- *  Get categories and subcategories
+ *  This class is connected with powertools.phtml
+ *  To use other classes use Dependency Injection
  */
 
 class Power extends \Magento\Framework\View\Element\Template
@@ -27,9 +28,13 @@ class Power extends \Magento\Framework\View\Element\Template
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Syncit\PowerTools\Block\CurrentPage $currentPage,
+        \Syncit\PowerTools\Block\Products $products,
+        \Syncit\PowerTools\Block\Cms $cms,
         array $data = []
     ) {
         $this->currentPage = $currentPage;
+        $this->products = $products;
+        $this->cms = $cms;
         parent::__construct( $context, $data);
     }
     public function showCurrentPageInfo(){
